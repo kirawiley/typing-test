@@ -13,7 +13,7 @@ $firstLetter.classList.add('current')
 document.addEventListener('keydown', function (event) {
   var $current = document.querySelector('.current')
   var $currentCharacter = $current.textContent
-
+  
   if (event.key === $currentCharacter) {
     $current.classList.remove('current')
 
@@ -22,7 +22,9 @@ document.addEventListener('keydown', function (event) {
     $current.classList.add('correct')
     }
   else {
-  
+    var errorNumber = document.querySelectorAll('.wrong').length
+    var $score = document.createTextNode('You made' + ' ' + errorNumber + ' ' + 'mistakes.')
+    return $score
     }
   }
 
