@@ -1,6 +1,8 @@
-var mySentence = 'The dog chased a rabbit through our yard.';
+var mySentence = 'The dog chased a rabbit across our yard.'
 
-var $mySentence = document.createElement('h1');
-$mySentence.textContent = mySentence;
-$mySentence.id = 'sentence';
-document.body.appendChild($mySentence)
+for (var i = 0; i < mySentence.length; i++) {
+ var $mySentence = document.createElement('span')
+ $mySentence.textContent = mySentence[i]
+ document.body.appendChild($mySentence)
+ $mySentence.id = 'sentence'
+}
