@@ -22,9 +22,7 @@ document.addEventListener('keydown', function (event) {
     $current.classList.add('correct')
     }
   else {
-    var errorNumber = document.querySelectorAll('.wrong').length
-    var $score = document.createTextNode('You made' + ' ' + errorNumber + ' ' + 'mistakes.')
-    return $score
+  
     }
   }
 
