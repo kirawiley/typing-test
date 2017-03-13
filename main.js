@@ -8,3 +8,20 @@ for (var i = 0; i < mySentence.length; i++) {
 
 var $firstLetter = document.querySelector('span')
 $firstLetter.classList.add('current')
+
+document.addEventListener('keydown', function (event) {
+  var $current = document.querySelector('.current')
+  var $currentCharacter = $current.textContent
+
+  if (event.key === $currentCharacter) {
+    $current.classList.remove('current')
+
+  if ($current.nextSibling.nodeType === 1){
+    $current.nextSibling.classList.add('current')
+    $current.classList.add('correct')
+    }
+  }
+  else {
+    $current.classList.add('wrong')
+  }
+})
