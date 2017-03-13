@@ -9,6 +9,7 @@ for (var i = 0; i < mySentence.length; i++) {
 var $firstLetter = document.querySelector('span')
 $firstLetter.classList.add('current')
 
+
 document.addEventListener('keydown', function (event) {
   var $current = document.querySelector('.current')
   var $currentCharacter = $current.textContent
@@ -20,7 +21,13 @@ document.addEventListener('keydown', function (event) {
     $current.nextSibling.classList.add('current')
     $current.classList.add('correct')
     }
+  else {
+    var errorNumber = document.querySelectorAll('.wrong').length
+    var $score = document.createTextNode('You made' + ' ' + errorNumber + ' ' + 'mistakes.')
+    return $score
+    }
   }
+
   else {
     $current.classList.add('wrong')
   }
